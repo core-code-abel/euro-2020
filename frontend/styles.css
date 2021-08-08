@@ -1,0 +1,22 @@
+.reportview-container .main .block-container {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#MainMenu {
+  visibility: hidden;
+}
+
+footer {
+  visibility: hidden;
+}
+
+.home-image {
+  height: 25px;
+  margin-bottom: 5px;
+}
+
+#core-link {
+  text-decoration: none;
+  color: black
+}

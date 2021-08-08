@@ -12,19 +12,3 @@ def root():
         "message":"welcome to Euro 2020 API"
     }
 
-
-
-
-
-@app.route("/saludo")
-@handle_error
-def saludo_fn():
-    print("terminal")
-    print(request.args)
-    name = request.args.get("name")
-    surname = request.args.get("surname")
-    #raise ValueError("MEC")
-    return {
-        "name":"EMOJI" + name,
-        "surname":surname,
-    }

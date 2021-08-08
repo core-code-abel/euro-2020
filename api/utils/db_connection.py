@@ -5,5 +5,4 @@ engine = create_engine(db_url)
 connection = engine.connect()
 
 def execute_query(query):
-  print(query)
   return list(connection.execute(query))

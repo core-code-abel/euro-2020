@@ -6,28 +6,21 @@ from utils.sql_utils import parse_where
 from app import app
 
 
-@app.route("/test")
+@app.route("/masters/<table>/<column>")
 @handle_error
-def test():
-    select = ['team_id', 'team_name']
-    where = {
-        'OR' : [
-            'team_id=4',
-            'team_id=6'
-        ]
-    }
+def masters(table, column):
     query = '''
-        SELECT {cols}
-        FROM teams
-        WHERE {conditions}
+        SELECT DISTINCT {column}
+        FROM {table}
+        ORDER BY {column}
         ;
     '''
     return json_response(
         execute_query(
             query.format(
-                cols = ', '.join(select),
-                conditions = parse_where(where)
+                column = column,
+                table = table
             )
         ),
-        select
+        [column]
     )
