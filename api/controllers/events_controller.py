@@ -75,7 +75,7 @@ def goals_player():
     if not event_type:
         return(no_query_params_message, 200)
     select = [
-        'action_player_{event_player}',
+        f'action_player_{event_player}',
         f'count(action_player_{event_player}) AS {format_alias(event_type)}'
     ]
     where = {

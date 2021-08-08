@@ -1,9 +1,10 @@
 from flask import Response
-import json
+import pandas as pd
 
 def process_col(col):
     return col.split('.')[-1].split(' AS ')[-1]
 
 def json_response(data, cols, status=200):
-    print (data)
-    return json.dumps([[{process_col(col): row[i]} for i, col in enumerate(cols)] for row in data])
+    res = pd.DataFrame(data)
+    res.columns = [process_col(col) for col in cols]
+    return res.to_json(orient="records")

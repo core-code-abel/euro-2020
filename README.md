@@ -53,3 +53,17 @@
   - Jugador 1
   - Jugador 2
   - ID partido
+
+## API
+
+### /events?type=aaa
+  - Eventos de un partido agrupado por equipo del total de partidos
+  - Retorna el sumatorio de eventos del tipo "type"
+
+### /events-player?type=aaa&player=2
+  - Eventos de un partido agrupado por jugador del total de partidos
+  - Retorna el sumatorio de eventos del tipo "type" indicando player=1 o player=2 (asistente en gol o jugador que sale en sustitución)
+
+### /events-team/team?type=aaa&player=2
+  - Eventos de un partido agrupado por jugador de un equipo
+  - Retorna el sumatorio de eventos del tipo "type" indicando player=1 o player=2 (asistente en gol o jugador que sale en sustitución)
