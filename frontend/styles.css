@@ -1,6 +1,13 @@
 .reportview-container .main .block-container {
   padding-top: 0px;
   padding-bottom: 0px;
+  max-width: 1500px;
+}
+
+.stPlotlyChart.js-plotly-plot {
+  margin-left: -70px;
+  margin-top: -18px;
+  z-index: 0 !important;
 }
 
 #MainMenu {
@@ -20,3 +27,4 @@ footer {
   text-decoration: none;
   color: black
 }
+

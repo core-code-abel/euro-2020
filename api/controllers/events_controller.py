@@ -1,43 +1,7 @@
-from utils.db_connection import execute_query
-from utils.handle_error import handle_error
-from utils.json_response import json_response
-from utils.sql_utils import format_alias, parse_where
 from flask import request
 from app import app
-
-query = {
-    "team": '''
-        SELECT {cols}
-        FROM events
-        JOIN teams ON teams.team_id=events.team_id
-        WHERE {conditions}
-        ;
-    ''',
-    "player": '''
-        SELECT {cols}
-        FROM events
-        WHERE {conditions}
-        ;
-    '''
-}
-
-no_query_params_message = {
-    "status": "error",
-    "message": "Empty params"
-}
-
-def get_response(select, where):
-    response = execute_query(
-            query['team'].format(
-                cols = ', '.join(select),
-                conditions = parse_where(where),
-            )
-        )
-    if len(response) == 0:
-        return "[]"
-    return json_response(response, select)
-        
-
+from utils.handle_error import handle_error
+from utils.sql_queries import get_response, no_query_params_message
 
 @app.route("/events")
 @handle_error
@@ -57,7 +21,7 @@ def events():
     if event_type == 'Goal':
         where['OR'].append("events.type='Penalty'")
 
-    return get_response(select, where)
+    return get_response('team', select, where)
 
 
 @app.route("/events-player")
@@ -79,7 +43,7 @@ def events_player():
     if event_type == 'Goal':
         where['OR'].append("events.type='Penalty'")
 
-    return get_response(select, where)
+    return get_response('team', select, where)
 
 
 @app.route("/events-team/<team>")
@@ -101,5 +65,5 @@ def events_team(team):
     }
     if event_type == 'Goal':
         where['AND'][0] = "events.type IN ('Goal', 'Penalty')"
-    return get_response(select, where)
+    return get_response('team', select, where)
     

@@ -1,10 +1,12 @@
 from .tab_home import render_tab_home
 from .tab_events import render_tab_events
+from .tab_statistics import render_tab_statistics
 from ._404 import render_404
 
 tabs = {
   "Home": lambda st: render_tab_home(st),
   "Events": lambda st: render_tab_events(st),
+  "Match Statistics": lambda st: render_tab_statistics(st),
 }
 
 def set_tabs(st):
