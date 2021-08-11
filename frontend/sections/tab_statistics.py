@@ -11,16 +11,35 @@ API_URL = os.getenv("API_URL")
 
 def render_tab_statistics(st):
 
-    cols = st.columns((1, 2, 1, 6, 1))
+    cols = st.columns((5, 2, 12, 1, 5, 1))
     teams = get_master('teams', 'team_name')
-    with cols[1]:
+    with cols[0]:
         st.subheader('Team 1')
         team1 = st.selectbox('', teams, key="t1")
         st.subheader('Team 2')
         team2 = st.selectbox('', teams, key="t2")
         
-    with cols[3]:
+    with cols[2]:
         st.image("images/statistics.jpg")
+
+    with cols[4]:
+        st.subheader('Solve on penalty')
+        res = requests.get(f"{API_URL}/penalty?type=all")
+        df = pd.DataFrame(res.json())
+        total_duels = len(df['solve_on_pens'])
+        pens_duels = len(df[df['solve_on_pens'] == True])
+        st.markdown(f'''
+            <div style='padding-top: 20px'>
+                <div style='font-size: 3em;'>
+                    {pens_duels}
+                </div>
+                <div style='font-size: 5em; transform: translate(50px, -100px);'>
+                    / {total_duels}
+                </div>
+            </div>
+        ''', unsafe_allow_html=True)
+
+        
 
     res1 = requests.get(f"{API_URL}/match-statistics/{team1}")
     res2 = requests.get(f"{API_URL}/match-statistics/{team2}")

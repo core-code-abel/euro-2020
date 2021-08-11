@@ -9,14 +9,14 @@ query = {
         ORDER BY {order_by}
         ;
     ''',
-    "team": '''
+    "events_team": '''
         SELECT {cols}
         FROM events
         JOIN teams ON teams.team_id=events.team_id
         WHERE {conditions}
         ;
     ''',
-    "player": '''
+    "events_player": '''
         SELECT {cols}
         FROM events
         WHERE {conditions}
@@ -30,15 +30,27 @@ query = {
         WHERE {conditions}
         ;
     ''',
-    "match-statistics": '''
+    "match_statistics": '''
         SELECT {cols}
         FROM match_team
         JOIN teams ON match_team.team_id=teams.team_id
         WHERE {conditions}
     ''',
-    "location": '''
-        SELECT player_name, long, lat
+    "players_location": '''
+        SELECT {cols}
         FROM players
+        WHERE {conditions}
+    ''',
+    "players_club_grouped": '''
+        SELECT {cols}
+        FROM players
+        GROUP BY {group_by}
+        ORDER BY {order_by}
+    ''',
+    "players_club": '''
+        SELECT {cols}
+        FROM players
+        JOIN teams ON teams.team_id=players.team_id 
         WHERE {conditions}
     '''
 }
@@ -48,13 +60,14 @@ no_query_params_message = {
     "message": "Empty params"
 }
 
-def get_response(type, select, where={'OR': "true"}, table='', order_by=''):
+def get_response(type, select, where={'OR': ["true"]}, table='', order_by='', group_by=''):
     response = execute_query(
             query[type].format(
                 cols = ', '.join(select),
                 conditions = parse_where(where),
                 table = table,
-                order_by = order_by
+                order_by = order_by,
+                group_by = group_by
             )
         )
     if len(response) == 0:

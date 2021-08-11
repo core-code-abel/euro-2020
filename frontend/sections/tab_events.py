@@ -3,16 +3,11 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from ._404 import render_404
-from .utils import get_master
+from .utils import get_master, MEDALS
 
 from dotenv import load_dotenv
 load_dotenv()
 
-medals = {
-    0: '🥇',
-    1: '🥈',
-    2: '🥉',
-}
 
 API_URL = os.getenv("API_URL")
 
@@ -60,7 +55,7 @@ def render_tab_events(st):
             st.subheader("Top 6")
             st.markdown("<div style='height: 20px; color: white'>.<\div>", unsafe_allow_html=True)
             for i, row in enumerate(df[df.columns[0]].value_counts()[:6].items()):
-                st.write(medals[i] if i < 3 else "&nbsp;"*5, row[0], row[1])
+                st.write(MEDALS[i] if i < 3 else "&nbsp;"*5, row[0], row[1])
         else:
             st.write("Nothing happened with this conditions")
 
@@ -69,5 +64,4 @@ def render_tab_events(st):
             plt.hist(df["time"], bins=range(0, 130, 10))
             plt.gcf().set_size_inches(6, 3)
             st.subheader("When did it happened?")
-            print(df['time'])
             st.pyplot(plt)

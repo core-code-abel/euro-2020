@@ -7,12 +7,4 @@ from app import app
 @handle_error
 def masters(table, column):
     return get_response('masters', [column], table=table, order_by=column)
-    # return json_response(
-    #     execute_query(
-    #         query['masters'].format(
-    #             column = column,
-    #             table = table
-    #         )
-    #     ),
-    #     [column]
-    # )
+

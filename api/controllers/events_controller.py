@@ -21,7 +21,7 @@ def events():
     if event_type == 'Goal':
         where['OR'].append("events.type='Penalty'")
 
-    return get_response('team', select, where)
+    return get_response('events_team', select, where)
 
 
 @app.route("/events-player")
@@ -43,7 +43,7 @@ def events_player():
     if event_type == 'Goal':
         where['OR'].append("events.type='Penalty'")
 
-    return get_response('team', select, where)
+    return get_response('events_team', select, where)
 
 
 @app.route("/events-team/<team>")
@@ -65,5 +65,5 @@ def events_team(team):
     }
     if event_type == 'Goal':
         where['AND'][0] = "events.type IN ('Goal', 'Penalty')"
-    return get_response('team', select, where)
+    return get_response('events_team', select, where)
     
