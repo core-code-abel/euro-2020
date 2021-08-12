@@ -10,7 +10,7 @@ load_dotenv()
 
 
 API_URL = os.getenv("API_URL")
-
+print ('-----------------', API_URL)
 def render_tab_events(st):
     body = st.columns((1, 2, 2, 1))
     masters = get_master('events', 'type')
