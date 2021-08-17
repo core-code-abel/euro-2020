@@ -1,16 +1,10 @@
 import requests
-import os
+from .config import API_URL
 import pandas as pd
 import matplotlib.pyplot as plt
 from ._404 import render_404
 from .utils import get_master, MEDALS
 
-from dotenv import load_dotenv
-load_dotenv()
-
-
-API_URL = os.getenv("API_URL")
-print ('-----------------', API_URL)
 def render_tab_events(st):
     body = st.columns((1, 2, 2, 1))
     masters = get_master('events', 'type')
@@ -63,5 +57,8 @@ def render_tab_events(st):
         if len(list(df)) != 0:
             plt.hist(df["time"], bins=range(0, 130, 10))
             plt.gcf().set_size_inches(6, 3)
+            plt.title(f"When {event_type}s happened?")
+            plt.xlabel("Time (min)")
+            plt.ylabel(f"{event_type}s")
             st.subheader("When did it happened?")
             st.pyplot(plt)

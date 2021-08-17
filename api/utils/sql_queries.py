@@ -39,6 +39,7 @@ query = {
     "players_location": '''
         SELECT {cols}
         FROM players
+        JOIN teams ON teams.team_id= players.team_id
         WHERE {conditions}
     ''',
     "players_club_grouped": '''

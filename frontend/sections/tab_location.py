@@ -1,18 +1,13 @@
 from .utils import get_master
 import plotly.express as px
 import requests
-import os
 import json
 import pandas as pd
 import numpy as np
-
-from dotenv import load_dotenv
-load_dotenv()
-
-API_URL = os.getenv("API_URL")
+from .config import API_URL
 
 def render_tab_location(st):
-    country = st.selectbox('', ['Global player location'] + (get_master('players', 'country')))
+    country = st.selectbox('', ['Global player location'] + (get_master('teams', 'team_name')))
     res = requests.get(f"{API_URL}/players-location{f'/{country}' if country != 'Global player location' else ''}")
     df = pd.DataFrame(res.json())
     c_lat = (df["lat"].max()+df["lat"].min())/2

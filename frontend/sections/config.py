@@ -1,5 +1,11 @@
+
+import os
+
+API_URL = os.getenv("API_URL", "http://localhost:5000")
+
 def set_config(st):
 	st.set_page_config(
+		page_icon="⚽",
 		page_title = "EURO-2020",
 		layout = 'wide',
 		initial_sidebar_state = "collapsed"

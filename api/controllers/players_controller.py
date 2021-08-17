@@ -15,7 +15,7 @@ def players_location():
 @handle_error
 def players_location_team(country):
     select = ["player_name", "born_city", "long", "lat"]
-    where = {"OR": [f"country='{country}'"]}
+    where = {"OR": [f"teams.team_name='{country}'"]}
     return get_response('players_location', select, where)
 
 @app.route("/players-club")

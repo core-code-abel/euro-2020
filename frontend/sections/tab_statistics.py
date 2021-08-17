@@ -1,13 +1,8 @@
 from .utils import get_master
 import requests
-import os
 import pandas as pd
 import matplotlib.pyplot as plt
-
-from dotenv import load_dotenv
-load_dotenv()
-
-API_URL = os.getenv("API_URL")
+from .config import API_URL
 
 def render_tab_statistics(st):
 

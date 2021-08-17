@@ -1,16 +1,11 @@
 from .utils import get_master
 import plotly.express as px
 import requests
-import os
 import json
 import pandas as pd
 import numpy as np
 from .utils import MEDALS
-
-from dotenv import load_dotenv
-load_dotenv()
-
-API_URL = os.getenv("API_URL")
+from .config import API_URL
 
 def render_tab_club(st):
 
