@@ -25,8 +25,8 @@ This project was made to experiment and have fun with some data cleaning, analys
 
 <br>
 
-<a href="https://jupyter.org/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_jupyter.png"></a>
-<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_beautiful_soup.png"></a>
+<a target="_blank" href="https://jupyter.org/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_jupyter.png"></a>
+<a target="_blank" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_beautiful_soup.png"></a>
 
 <br>
 
@@ -34,10 +34,10 @@ This project was made to experiment and have fun with some data cleaning, analys
 
 <br>
 
-<a href="https://www.python.org/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_python.png"></a>
-<a href="https://flask.palletsprojects.com/en/2.0.x/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_flask.png"></a>
-<a href="https://www.postgresql.org/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_postgresql.png"></a>
-<a href="https://www.sqlalchemy.org/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_sqlalchemy.png"></a>
+<a target="_blank" href="https://www.python.org/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_python.png"></a>
+<a target="_blank" href="https://flask.palletsprojects.com/en/2.0.x/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_flask.png"></a>
+<a target="_blank" href="https://www.postgresql.org/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_postgresql.png"></a>
+<a target="_blank" href="https://www.sqlalchemy.org/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_sqlalchemy.png"></a>
 
 <br>
 
@@ -45,12 +45,12 @@ This project was made to experiment and have fun with some data cleaning, analys
 
 <br>
 
-<a href="https://streamlit.io/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_streamlit.png"></a>
-<a href="https://pandas.pydata.org/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_pandas.png"></a>
-<a href="https://matplotlib.org/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_matplotlib.png"></a>
-<a href="https://www.w3schools.com/html/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_html.png"></a>
-<a href="https://www.w3schools.com/css/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_css.png"></a>
-<a href="https://getbootstrap.com/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_bootstrap.png"></a>
+<a target="_blank" href="https://streamlit.io/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_streamlit.png"></a>
+<a target="_blank" href="https://pandas.pydata.org/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_pandas.png"></a>
+<a target="_blank" href="https://matplotlib.org/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_matplotlib.png"></a>
+<a target="_blank" href="https://www.w3schools.com/html/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_html.png"></a>
+<a target="_blank" href="https://www.w3schools.com/css/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_css.png"></a>
+<a target="_blank" href="https://getbootstrap.com/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_bootstrap.png"></a>
 
 <br>
 
@@ -58,8 +58,8 @@ This project was made to experiment and have fun with some data cleaning, analys
 
 <br>
 
-<a href="https://www.heroku.com/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_docker.png"></a>
-<a href="https://www.docker.com/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_heroku.png"></a>
+<a target="_blank" href="https://www.heroku.com/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_docker.png"></a>
+<a target="_blank" href="https://www.docker.com/"><img height=60 style="margin-right: 40px" src="./readme-docs/ic_heroku.png"></a>
 
 <br>
 <hr>
