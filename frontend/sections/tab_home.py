@@ -6,7 +6,7 @@ def render_tab_home(st):
     with cols[1]:
         st.header("Welcome to my lovely page!")
         st.write("This is my first project as data analyst student, so any kind of feedback received will be welcome!!!")
-        st.write("- Check out this code at my [repo](https://github.com/core-code-abel)")
+        st.write("- Check out this code at my [repo](https://github.com/core-code-abel/euro-2020)")
         st.markdown('''
             - Find me at&nbsp;
             [<img
